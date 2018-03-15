@@ -1,0 +1,22 @@
+{# extends 'base.html.twig' #}
+
+{% block body %}
+    <h1>Term creation</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form.term, { 'attr': {'style': 'width: 100%'} }) }}
+        <input type="submit" value="Create" />
+    {{ form_end(form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('taxonomy_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}
+
+<p>Username: {{ app.user.username }}</p>
+{% if app.debug %}
+    <p>Request method: {{ app.request.method }}</p>
+    <p>Application Environment: {{ app.environment }}</p>
+{% endif %}
