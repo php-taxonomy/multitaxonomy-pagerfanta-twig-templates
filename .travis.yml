@@ -11,4 +11,8 @@ install:
 - composer install
 
 script:
-- vendor/bin/twigcs lint .
+- vendor/bin/twigcs lint
+
+after_script:
+- vendor/bin/twigcs
+- vendor/bin/twigcs help lint
