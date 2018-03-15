@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Term</h1>
+
+    <table>
+        <tbody>
+            {# <tr>
+                <th>UUID</th>
+                <td>{{ term.uuid }}</td>
+            </tr>
+            #}
+            <tr>
+                <th>Term</th>
+                <td>{{ term.term }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('taxonomy_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('taxonomy_new') }}">Create a new term</a>
+        </li>
+        <li>
+            <a href="{{ path('taxonomy_edit', { 'uuid': term.uuid }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+
+    {{ pagerfanta(uRLs, 'default') }}
+    <table>
+        <thead>
+            <tr>
+                {#<th>UUID</th>#}
+                <th>Url</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for uRL in uRLs %}{#.getCurrentPageResults %#}
+            <tr>
+                {#<td><a href="{{ path('url_show', { 'uuid': uRL.uuid }) }}">{{ uRL.uuid }}</a></td>#}
+                <td>{{ uRL.url }}</td>
+                <td>
+                            <a href="{{ uRL.url }}">visit</a>
+                            <a href="{{ path('url_show', { 'uuid': uRL.distant_link_id }) }}">show</a>
+                            <a href="{{ path('url_edit', { 'uuid': uRL.distant_link_id }) }}">edit</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {{ pagerfanta(uRLs, 'default') }}
+
+{% endblock %}
