@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Terms list</h1>
+    ({{ terms.getNbResults }}, {{ terms.getNbPages }})
+    {{ pagerfanta(terms) }}
+    <table>
+        <thead>
+            <tr>
+                {# <th>UUID</th> #}
+                <th>Term</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {#{ dump('orderby twig') }#}{% for term in terms %}
+            <tr>
+                {# <td><a href="{{ path('taxonomy_show', { 'uuid': term.uuid }) }}">{{ term.uuid }}</a></td> #}
+                <td>{{ term.term }}</td>
+                <td>
+                            <a href="{{ path('taxonomy_show', { 'uuid': term.uuid }) }}">show</a>
+                            <a href="{{ path('taxonomy_edit', { 'uuid': term.uuid }) }}">edit</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {{ pagerfanta(terms) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('taxonomy_new') }}">Create a new term</a>
+        </li>
+    </ul>
+{% endblock %}
