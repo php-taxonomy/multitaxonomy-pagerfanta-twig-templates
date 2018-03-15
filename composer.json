@@ -1,0 +1,27 @@
+{
+    "name": "php-taxonomy/multitaxonomy-pagerfanta-twig-templates",
+    "description": "Multitaxonomy (Twig templates for pagerfanta objects)",
+    "keywords": ["taxonomy", "classification", "category", "tag", "pagerfanta", "twig", "snowyowl"],
+    "homepage": "https://github.com/php-taxonomy/multitaxonomy-pagerfanta-twig-templates",
+    "license": "ISC",
+    "authors": [
+        {"name": "Jean-bernard Addor"},
+        {"name": "Community", "homepage": "https://github.com/php-taxonomy/multitaxonomy-pagerfanta-twig-templates"}
+    ],
+    "require": {
+        "white-october/pagerfanta-bundle": "^1.0",
+        "symfony/twig-bundle": "^2.7 || ^3.0 || ^4.0"
+    },
+    "require-dev": {
+        "allocine/twigcs": "^2.0"
+    },
+    "suggest": {
+    },
+    "autoload": {
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1.x-dev"
+        }
+    }
+}
