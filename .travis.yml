@@ -1,0 +1,11 @@
+language: php
+
+cache:
+  directories:
+  - $HOME/.composer/cache/files
+
+install:
+- composer install
+
+script:
+- vendor/bin/twigcs lint .
