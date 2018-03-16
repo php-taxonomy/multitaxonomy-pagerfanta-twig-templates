@@ -1,5 +1,4 @@
 language: php
-sudo: true # temporary problem with false posted on Travis website
 
 php:
 - 7.2 # php >= 7.0, trusty comes with 5.5
