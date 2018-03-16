@@ -13,9 +13,9 @@ install:
 
 script:
 - for f in *.twig; do
-    echo $f
-    vendor/bin/twigcs lint $f
-    echo
+    echo $f;
+    vendor/bin/twigcs lint $f;
+    echo;
   done
 # - vendor/bin/twigcs lint edit.html.twig
 
