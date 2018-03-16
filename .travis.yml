@@ -1,5 +1,5 @@
 language: php
-sudo: true
+sudo: true # temporary problem with false posted on Travis website
 
 php:
 - 7.2 # php >= 7.0, trusty comes with 5.5
@@ -12,7 +12,7 @@ install:
 - composer install
 
 script:
-- vendor/bin/twigcs lint --verbose --verbose -- *.twig
+- vendor/bin/twigcs lint edit.html.twig
 
 after_script:
 - vendor/bin/twigcs
