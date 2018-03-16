@@ -12,7 +12,12 @@ install:
 - composer install
 
 script:
-- vendor/bin/twigcs lint edit.html.twig
+- for f in *.twig; do
+    echo $f
+    vendor/bin/twigcs lint $f
+    echo
+  done
+# - vendor/bin/twigcs lint edit.html.twig
 
 after_script:
 - vendor/bin/twigcs
