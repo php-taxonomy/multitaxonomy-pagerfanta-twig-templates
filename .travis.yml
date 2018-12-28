@@ -1,7 +1,7 @@
 language: php
 
 php:
-- 7.2 # php >= 7.0, trusty comes with 5.5
+- 7.3 # php >= 7.0, trusty comes with 5.5
 
 cache:
   directories:
